@@ -19,6 +19,10 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: '6mb' }));
 
+app.get('/', (req, res) => {
+  res.type('text').send('Skill2Hire backend is running. Try GET /health or use /api/* endpoints.');
+});
+
 app.get('/health', (req, res) => {
   res.json({ ok: true });
 });
